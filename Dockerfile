@@ -5,6 +5,9 @@ RUN apk add --update git gcc libc-dev &&\
     go get github.com/oxequa/realize &&\
     go get -u github.com/rakyll/gotest &&\
     go get -u golang.org/x/tools/cmd/godoc &&\
+    mkdir -p /tmp/example &&\
+    ( cd /tmp/example; go mod init example; go get -u goa.design/goa/v3/cmd/goa ) &&\
+    rm -rf /tmp/example &&\
     rm -rf /var/cache/apk/* &&\
     echo
 
