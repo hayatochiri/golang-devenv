@@ -9,6 +9,7 @@ RUN apk add --update git gcc libc-dev &&\
     ( cd /tmp/example; go mod init example; go get -u goa.design/goa/v3/cmd/goa ) &&\
     rm -rf /tmp/example &&\
     rm -rf /var/cache/apk/* &&\
+    rm -rf /go/pkg/mod &&\
     echo
 
 CMD godoc --http=0.0.0.0:8080
